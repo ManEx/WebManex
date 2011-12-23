@@ -1,0 +1,10 @@
+C:\DansFolder\Projects\eManEx\site\DAL\bin\Debug\DAL.dll
+C:\DansFolder\Projects\eManEx\site\DAL\bin\Debug\DAL.pdb
+C:\DansFolder\Projects\eManEx\site\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\DansFolder\Projects\eManEx\site\DAL\obj\Debug\DAL.dll
+C:\DansFolder\Projects\eManEx\site\DAL\obj\Debug\DAL.pdb
+C:\work\Projects\eManEx\site\DAL\bin\Debug\DAL.dll
+C:\work\Projects\eManEx\site\DAL\bin\Debug\DAL.pdb
+C:\work\Projects\eManEx\site\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\work\Projects\eManEx\site\DAL\obj\Debug\DAL.dll
+C:\work\Projects\eManEx\site\DAL\obj\Debug\DAL.pdb

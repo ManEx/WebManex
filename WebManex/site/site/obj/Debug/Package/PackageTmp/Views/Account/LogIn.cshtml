@@ -1,0 +1,92 @@
+﻿@model site.Models.LogInModel
+
+@{
+    ViewBag.Title = Resources.Account.LogIn.Login;
+}
+<center>
+@if (this.Model != null && this.Model.ShowSessionExpired)
+{
+<div class="ui-widget" style=" margin:10px; width:310px;">
+	<div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+            @Resources.Account.LogIn.sessionExpired			
+	</div>
+</div>
+}
+@if (this.Model != null && this.Model.ShowNoSeat)
+{
+<div class="ui-widget" style=" margin:10px; width:310px;">
+	<div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+            @Resources.Account.LogIn.noSeat			
+	</div>
+</div>
+}
+<h2 class="bodyShdwTxt">@Resources.Account.LogIn.Login</h2>
+<p>
+    @Resources.Account.LogIn.EnterUnPw
+</p>
+</center>
+
+
+
+@using (Html.BeginForm())
+{
+    <center>
+    
+	    <span style="color:red">@Html.ValidationSummary(true, Resources.Account.LogIn.loginError)</span>
+    
+    <table>
+        <tr>
+            <td align="right">
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.UserName, Resources.Account.LogIn.Username)
+                </div>
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.UserName)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right"> 
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Password, Resources.Account.LogIn.Password)
+                </div>
+            </td>
+            <td> 
+                <div class="editor-field">
+                    @Html.PasswordFor(m => m.Password)
+                </div>
+            </td>
+        </tr> 
+        <tr>
+            <td></td>
+            <td>
+                <div class="editor-label">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe)
+                </div>
+            </td>
+        </tr>  
+        <tr>
+            <td></td>
+            <td><button class="blue" type="submit">@Resources.Account.LogIn.Login</button></td>
+        </tr> 
+    </table>    
+    <div class="ui-widget" id="browserRec" style=" margin:10px; width:330px; display:none">
+	    <div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+                @Resources.Account.LogIn.browserRec		
+	    </div>
+    </div>
+    </center>
+    <script type="text/javascript">
+        $(function () {
+            if (!($.browser.mozilla || /chrome/.test(navigator.userAgent.toLowerCase()))) {
+                $("#browserRec").css("display", "block");
+            }
+        });
+    </script>
+}

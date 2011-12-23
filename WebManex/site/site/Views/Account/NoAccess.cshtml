@@ -1,0 +1,15 @@
+﻿@model site.Models.NoAccessModel
+           
+@if (!Request.IsAjaxRequest())
+{
+<div id="navMenu">
+    @Html.Partial("Navigation/Nav", this.Model.Usr) 
+</div>
+}
+
+<div id="content">
+    <center>
+    <h2 style="margin-top:60px">@Resources.Global.noAccessTitle</h2>
+    <div>@Resources.Global.noAccessBody</div>
+    </center>
+</div>

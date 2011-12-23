@@ -1,0 +1,15 @@
+C:\DansFolder\Projects\eManEx\site\Resources\bin\Release\Resources.dll
+C:\DansFolder\Projects\eManEx\site\Resources\bin\Release\Resources.pdb
+C:\DansFolder\Projects\eManEx\site\Resources\bin\Release\es\Resources.resources.dll
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\ResolveAssemblyReference.cache
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\Resources.Account.LogIn.resources
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\Resources.Global.resources
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\Resources.Helpers.Nav.resources
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\Resources.Helpers.Nav.es.resources
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\GenerateResource.read.1.tlog
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\GenerateResource.write.1.tlog
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\es\Resources.resources.dll
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\Resources.dll
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\Resources.pdb
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\Resources.Account.Register.resources
+C:\DansFolder\Projects\eManEx\site\Resources\obj\Release\Resources.Account.ChangePassword.resources

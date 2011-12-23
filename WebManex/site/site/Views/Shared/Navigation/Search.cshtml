@@ -1,0 +1,59 @@
+﻿@model site.Models.Nav.NavSearchModel
+<div id="searchNav">
+    <div id="topPanel">
+        <input id="searchText" type="text" />
+        <select id="searchDd1" onchange="searchSubMnuSel()">                
+            @Html.Partial("DdMenu", this.Model.GenCategoryList)
+        </select>
+        <select id="searchDd2" style="display:none">
+        </select>
+        <button class="blue" style="margin:0px" onclick="javascript:$global.navSearch('@this.Model.Usr.MbrUser.ProviderUserKey.ToString()')" >@Resources.Shared.Nav.go</button>
+    </div>
+    <div id="invalidSearch" style="display:none;">
+        <div class="invalidSearch">
+            <center>@Resources.Shared.Search.invalidSearchCriteria</center>
+        </div>
+    </div>
+    <div id="searchResults">
+    </div>
+</div>
+<script type="text/javascript">
+    function toggleSearch() {
+        if ($("#searchNav")[0].style.marginTop == "0px") {
+            //closing
+            $("#searchNav").animate({ marginTop: "-50px" }, { queue: false, duration: 300 });
+            $("#searchNav #searchResults").css("display", "none");
+
+            $("#botPanel").css("display", "none");
+            $("#searchMnu").css('backgroundPosition', '-82px -8px');
+        }
+        else {
+            //opening
+            $("#searchMnu").parent().attr('class', 'sfHover');
+            $("#searchNav").animate({ marginTop: "0px" }, { queue: false, duration: 300 });
+            $("#searchText")[0].focus();
+            $("#searchMnu").css('backgroundPosition', '-82px -48px');
+        }
+    };
+
+    function searchSubMnuSel() {
+        try {
+            var selected = $('#searchDd1').val();
+            var subMnu = $('#searchDd2');
+            var smUrl = '@Href("~/SearchDdMenu/")' + selected;
+            $.ajax({
+                url: smUrl,
+                success: function (data) {
+                    subMnu.html(data);
+                    subMnu.css("display", "inline");
+                },
+                cache: false,
+                type: "GET"
+            });
+            $('#searchDd2')[0].focus();
+        }
+        catch (exc) {
+            $('#searchDd2')[0].innerHTML = "";
+        }
+    }
+</script>

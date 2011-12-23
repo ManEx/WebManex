@@ -1,0 +1,54 @@
+﻿@model site.Models.Nav.SearchResultModel
+<div id="searchResContainer">
+    @if (this.Model.Categories.Count > 0)
+    {
+    <div id="srLeftCol">
+        <table cellpadding="0" cellspacing="0" style="width:100%; margin-top:10px;">
+            @foreach (site.Models.Nav.SearchResultCategory sCat in this.Model.Categories)
+            {
+            <tr class="catRow" id="@string.Format("row_{0}", sCat.Id)">
+                <td style="padding-left:10px;" onclick="javascript:$global.showNavSrDetails('@sCat.Id')">@sCat.Name</td>
+            </tr>
+            }
+        </table>
+    </div>
+    <div id="srDetails">
+        @foreach (site.Models.Nav.SearchResultCategory sCat in this.Model.Categories)
+        {
+        <table class="smallTbl detailItem" id="@sCat.Id" border="1" bordercolor="#ffffff" cellpadding="0" cellspacing="0" rules="rows">
+            
+                <tr class="srDetailHdr">
+                    <td valign="bottom">@sCat.Name</td>
+                    @foreach (string col in sCat.Columns)
+                    {
+                    <td valign="bottom">@col</td>
+                    }
+                </tr>
+            
+            <tbody style="height:182px">
+                @foreach (site.Models.Nav.SearchResultItem srItem in sCat.Items)
+                {
+                <tr onclick="javascript:window.location='@srItem.Link';">
+                    <td valign="top">@srItem.Group</td>
+                    @foreach (string res in srItem.Results)
+                    {
+                    <td valign="top">@res</td>
+                    }
+                </tr>
+                }
+            </tbody>
+            
+        </table>
+        }
+    </div>
+    }
+    else
+    {
+        <center>
+            @Resources.Shared.Search.noResults
+        </center>
+    }
+</div>
+<script type="text/javascript">
+    $global.showNavSrDetails('@this.Model.FirstCategory');
+</script>

@@ -1,0 +1,34 @@
+﻿@model site.Models.Admin.UsersModel
+@{
+    ViewBag.Title = @Resources.Account.Register.userAdmin;
+}
+<div id="navMenu">
+    @Html.Partial("Navigation/Nav", this.Model.Usr) 
+</div>
+<div id="content">
+    
+    <div class="leftCol">
+        <div id="leftColContainer">
+            @Html.Partial("List", new site.Models.Admin.UserListModel(this.Model.Usr, site.Classes.MxUser.GetAllUsers()))
+        </div>
+        <div class="SpacerRow"></div>
+    </div>
+    <div class="mainContent">
+        <div id="registerNewContainer">
+            @if (this.Model.Usr.IsInRole("USERS_Add") && string.IsNullOrEmpty(this.Model.UserId))
+            {
+            @Html.Partial("AddUser", new site.Models.Admin.AddUserModel(this.Model.Usr))
+            }
+        </div>
+        <div id="editUserContainer" style="display:none">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src='@Url.Content("~/Scripts/admin.js")'></script>
+@if (!string.IsNullOrEmpty(this.Model.UserId))
+{
+<script type="text/javascript">
+    $admin.getEditUserView('@this.Model.UserId');    
+</script>
+}

@@ -1,0 +1,76 @@
+﻿@model site.Classes.MxUser
+
+<div id="userInfo">  
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            @if (this.Model.IsInRole("GROUP_Edit"))
+            {
+            <td style="padding-top:2px">
+                <ul class="sf-menu rightSideMenu" >        
+	                <li class="current" style="display:inline;">
+		                <a id="toolsMnu" class="mnuIcon"></a>
+                        <ul>
+                            @if (this.Model.IsInRole("GROUP_Edit"))
+                            {
+                            <li>
+		                        <a onclick="javascript:$('.reqRoleLink').css('display', 'inline-block');" >@Resources.Shared.Nav.showRolesTool</a>                    
+                            </li>
+                            }                            
+                        </ul> 
+                    </li>
+       
+                </ul>
+            </td>
+            }
+            <td style="padding-left:10px">
+                @if (User.Identity.IsAuthenticated) {      
+                    <span>@User.Identity.Name &nbsp;</span>
+                    <a href="@Href("~/Account/LogOff")">@Resources.Shared.Nav.logout</a>
+                } else {
+                    <span>@Resources.Shared.Nav.notLoggedIn &nbsp;</span>
+                    <a href="@Href("~/Account/Login")">@Resources.Shared.Nav.login</a>
+                }
+            </td>
+            
+        </tr>
+    </table>
+</div>
+<input id="rootUrl" type="hidden" value="@Href("~")" />
+<input id="loadingTxt" type="hidden" value="@Resources.Global.loading" />
+<ul class="sf-menu">        
+	<li class="current">
+		<a id="mxMnu" class="mnuIcon"></a>
+        <ul>
+            @if (this.Model.IsInRole("USERS_View"))
+            {
+            <li>
+		        <a href="@Href("~/Admin/Users")" >@Resources.Shared.Nav.userAdminPages</a>                    
+            </li>
+            }
+            @if (this.Model.IsInRole("GROUP_View"))
+            {
+            <li>
+		        <a href="@Href("~/Admin/Groups")" >@Resources.Shared.Nav.groupAdminPages</a>                    
+            </li>
+            }
+            @if (this.Model.IsInRole("CUSTOMER_View"))
+            {
+            <li>
+                <a href="@Href("~/orders")" >@Resources.Shared.Nav.orderStatusModule</a>
+            </li>
+            }
+            <li class="lastItem">
+                <a href="http://www.manex.com" target="_blank" >ManEx.com</a>
+            </li>
+        </ul>        
+
+    </li>
+    <li>
+		<a id="searchMnu" class="mnuIcon" href="javascript:toggleSearch()"></a>		
+	</li>
+    <li>
+        <span class="mnuTxt" style="margin-left:20px">@System.Configuration.ConfigurationSettings.AppSettings["CompanyName"]</span>
+    </li>
+       
+</ul>
+@Html.Partial("Navigation/Search", new site.Models.Nav.NavSearchModel(this.Model))

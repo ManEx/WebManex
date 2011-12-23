@@ -1,0 +1,24 @@
+﻿@model site.Models.Admin.GroupsModel
+
+@{
+    ViewBag.Title = "Manage Groups";
+}
+
+<div id="navMenu">
+    @Html.Partial("Navigation/Nav", this.Model.Usr) 
+</div>
+<div id="content">
+    <div class="leftCol">
+        <div id="leftColContainer">
+            @Html.Partial("List", this.Model)
+        </div>
+        <div class="SpacerRow"></div>
+    </div>
+    <div class="mainContent">
+        <div id="groupDetailsContainer" style="padding:10px 20px">
+        </div> 
+        <div id="addGroupContainer" style="padding:10px 20px">
+        </div>        
+    </div>
+</div>
+<script type="text/javascript" src='@Url.Content("~/Scripts/admin.js")'></script>

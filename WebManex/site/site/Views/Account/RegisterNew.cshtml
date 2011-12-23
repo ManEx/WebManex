@@ -1,0 +1,45 @@
+﻿@model site.Models.RegisterModel
+
+<h2 class="bodyShdwTxt">@Resources.Account.Register.createNew</h2>
+<div class="ui-widget" id="saveConfirm" style="display:none; margin-bottom:10px;">
+	<div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+            @Resources.Account.Register.saveConfirmation				
+	</div>
+</div>
+<div class="ui-widget" id="saveError" style="display:none; margin-bottom:10px;">
+    <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	        @Resources.Account.Register.saveUnsuccessful
+    </div>
+</div>
+<div class="ui-widget" id="missingFields" style="display:none; margin-bottom:10px;">
+    <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	        @Resources.Global.requiredFieldMsg
+    </div>
+</div>
+<table>
+    <tr>
+        <td><span id="regUsernameLbl">@Resources.Account.Register.username</span></td>
+    </tr>
+    <tr>        
+        <td><input id="regUsernameTxt" type="text" /></td>
+    </tr>
+    <tr>
+        <td><span id="regInitialsLbl">@Resources.Account.Register.init</span></td>
+        <td><span id="regFNameLbl">@Resources.Account.Register.firstName</span></td>
+        <td><span id="regLNameLbl">@Resources.Account.Register.lastName</span></td>
+        <td><span id="regEmailLbl">@Resources.Account.Register.email</span></td>
+    </tr>
+    <tr>
+        <td><input id="regInitialsTxt" type="text" /></td>
+        <td><input id="regFNameTxt" type="text" /></td>
+        <td><input id="regLNameTxt" type="text" /></td>
+        <td><input id="regEmailTxt" type="text" /></td>
+    </tr>
+</table>
+<div>
+    <input id="regCompanyAdminChB" type="checkbox" /><span>@Resources.Account.Register.adminUser</span>
+</div>
+<button class="blue" onclick="javascript:$account.validateAdd()" style="margin:20px 0">@Resources.Account.Register.addUser</button>

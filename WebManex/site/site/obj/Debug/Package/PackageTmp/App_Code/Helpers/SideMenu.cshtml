@@ -1,0 +1,39 @@
+﻿@helper SMC(site.Classes.UI.SideMenuContent smc) {
+    if (smc.Content != null)
+    {
+    <div id="smc">        
+        <div id="smcContent" >
+         @foreach(site.Classes.UI.SideMenuSection smcSec in smc.Content)
+         {
+            <div class="title">@smcSec.Title</div>
+            foreach (KeyValuePair<string, string> link in smcSec.Links)
+            {
+                 <div>
+                    <a href="@link.Value">@link.Key</a>
+                 </div>
+            }
+         }
+        </div>
+        <div id="smcHandle" onclick="toggleSmc()">
+            <div id="topV">></div>
+            <div id="botV">></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        function toggleSmc() {
+            if ($("#smcContent")[0].style.marginLeft == "0px") {
+                $("#smcContent").animate({ marginLeft: "-220px" }, { queue: false, duration: 500 });
+                $("#topV")[0].innerHTML = ">";
+                $("#botV")[0].innerHTML = ">";
+            }
+            else {
+                $("#smcContent").animate({ marginLeft: "0px" }, { queue: false, duration: 500 });
+                $("#topV")[0].innerHTML = "<";
+                $("#botV")[0].innerHTML = "<";
+            }
+        };
+    </script>
+    }
+}
+

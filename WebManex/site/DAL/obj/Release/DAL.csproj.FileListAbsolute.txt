@@ -1,0 +1,5 @@
+C:\DansFolder\Projects\eManEx\site\DAL\bin\Release\DAL.dll
+C:\DansFolder\Projects\eManEx\site\DAL\bin\Release\DAL.pdb
+C:\DansFolder\Projects\eManEx\site\DAL\obj\Release\ResolveAssemblyReference.cache
+C:\DansFolder\Projects\eManEx\site\DAL\obj\Release\DAL.dll
+C:\DansFolder\Projects\eManEx\site\DAL\obj\Release\DAL.pdb

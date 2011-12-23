@@ -1,0 +1,17 @@
+﻿@model site.Models.Admin.GroupsModel
+<div style="margin:0px 10px 10px">          
+@Html.Partial("Button", new site.Models.ButtonModel(this.Model.Usr, "showAddGroupViewBtn", new string[] { "GROUP_Add" },
+            Resources.Account.GroupManagement.addGroup + ">>", "javascript:$admin.getAddGroupView()", Resources.Account.GroupManagement.addGroupDesc, "blue", "", true)) 
+</div> 
+<table cellpadding="0" cellspacing="0" style="width:100%">
+    <tr class="leftColHdr">
+        <td>@Resources.Account.Register.groupName</td>
+    </tr>
+@foreach (string gName in this.Model.SortedNames)
+{      
+    <tr id="@this.Model.GroupNameDictionary[gName]" class="leftColRow" onclick="javascript:$admin.getGroupView('@this.Model.GroupNameDictionary[gName]', '@gName')">        
+        <td>@gName</td>
+    </tr>
+    
+}
+</table>   
