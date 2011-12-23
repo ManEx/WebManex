@@ -13,7 +13,7 @@
                             @if (this.Model.IsInRole("GROUP_Edit"))
                             {
                             <li>
-		                        <a onclick="javascript:$('.reqRoleLink').css('display', 'inline-block');" >@Resources.Shared.Nav.showRolesTool</a>                    
+		                        <a id="showGroupRolesLink" onclick="javascript:$global.toggleGroupRolesTool()" >@Resources.Shared.Nav.showRolesTool</a>                    
                             </li>
                             }                            
                         </ul> 
@@ -37,6 +37,8 @@
 </div>
 <input id="rootUrl" type="hidden" value="@Href("~")" />
 <input id="loadingTxt" type="hidden" value="@Resources.Global.loading" />
+<input id="showGroupRolesTxt" type="hidden" value="@Resources.Shared.Nav.showRolesTool" />
+<input id="hideGroupRolesTxt" type="hidden" value="@Resources.Shared.Nav.hideRolesTool" />
 <ul class="sf-menu">        
 	<li class="current">
 		<a id="mxMnu" class="mnuIcon"></a>

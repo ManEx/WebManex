@@ -1,4 +1,5 @@
 ﻿var rootUrl = $("#rootUrl").val();
+var showingGroupRoles = false;
 var $global = {
     // **********************  Global Validation **************************** //
     validateNotEmpty: function (labelId, textId) {
@@ -65,6 +66,18 @@ var $global = {
         }
         else {
             $("#addRoleToGroupError").css("display", "block");
+        }
+    },
+    toggleGroupRolesTool: function () {
+        if (!showingGroupRoles) {
+            $('.reqRoleLink').css('display', 'inline-block');
+            $('#showGroupRolesLink').html($('#hideGroupRolesTxt').val());
+            showingGroupRoles = true;
+        }
+        else {
+            $('.reqRoleLink').css('display', 'none');
+            $('#showGroupRolesLink').html($('#showGroupRolesTxt').val());
+            showingGroupRoles = false;
         }
     },
     onlyNumbers: function (evt) {

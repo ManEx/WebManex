@@ -26,3 +26,17 @@ C:\work\Projects\eManEx\site\site\bin\es\Resources.resources.dll
 C:\work\Projects\eManEx\site\site\obj\Debug\ResolveAssemblyReference.cache
 C:\work\Projects\eManEx\site\site\obj\Debug\site.dll
 C:\work\Projects\eManEx\site\site\obj\Debug\site.pdb
+C:\Users\DanToshiba\WebManex\site\site\bin\site.dll
+C:\Users\DanToshiba\WebManex\site\site\bin\site.pdb
+C:\Users\DanToshiba\WebManex\site\site\bin\BLL.dll
+C:\Users\DanToshiba\WebManex\site\site\bin\EntityFramework.dll
+C:\Users\DanToshiba\WebManex\site\site\bin\Resources.dll
+C:\Users\DanToshiba\WebManex\site\site\bin\DAL.dll
+C:\Users\DanToshiba\WebManex\site\site\bin\BLL.pdb
+C:\Users\DanToshiba\WebManex\site\site\bin\Resources.pdb
+C:\Users\DanToshiba\WebManex\site\site\bin\EntityFramework.xml
+C:\Users\DanToshiba\WebManex\site\site\bin\DAL.pdb
+C:\Users\DanToshiba\WebManex\site\site\bin\es\Resources.resources.dll
+C:\Users\DanToshiba\WebManex\site\site\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\DanToshiba\WebManex\site\site\obj\Debug\site.dll
+C:\Users\DanToshiba\WebManex\site\site\obj\Debug\site.pdb

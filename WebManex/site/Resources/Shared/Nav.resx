@@ -138,9 +138,6 @@
   <data name="kb" xml:space="preserve">
     <value>KB</value>
   </data>
-  <data name="linkText" xml:space="preserve">
-    <value>Howdy doo</value>
-  </data>
   <data name="mx" xml:space="preserve">
     <value>Manex System Options</value>
   </data>
@@ -322,6 +319,9 @@
     <value>save</value>
   </data>
   <data name="showRolesTool" xml:space="preserve">
-    <value>Group Roles Tool</value>
+    <value>Show Group Roles</value>
+  </data>
+  <data name="hideRolesTool" xml:space="preserve">
+    <value>Hide Group Roles</value>
   </data>
 </root>

@@ -124,6 +124,15 @@ namespace Resources.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide Group Roles.
+        /// </summary>
+        public static string hideRolesTool {
+            get {
+                return ResourceManager.GetString("hideRolesTool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string homeModule {
@@ -138,15 +147,6 @@ namespace Resources.Shared {
         public static string kb {
             get {
                 return ResourceManager.GetString("kb", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Howdy doo.
-        /// </summary>
-        public static string linkText {
-            get {
-                return ResourceManager.GetString("linkText", resourceCulture);
             }
         }
         
@@ -619,7 +619,7 @@ namespace Resources.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Group Roles Tool.
+        ///   Looks up a localized string similar to Show Group Roles.
         /// </summary>
         public static string showRolesTool {
             get {

@@ -12,3 +12,10 @@ C:\work\Projects\eManEx\site\BLL\bin\Debug\DAL.pdb
 C:\work\Projects\eManEx\site\BLL\obj\Debug\ResolveAssemblyReference.cache
 C:\work\Projects\eManEx\site\BLL\obj\Debug\BLL.dll
 C:\work\Projects\eManEx\site\BLL\obj\Debug\BLL.pdb
+C:\Users\DanToshiba\WebManex\site\BLL\bin\Debug\BLL.dll
+C:\Users\DanToshiba\WebManex\site\BLL\bin\Debug\BLL.pdb
+C:\Users\DanToshiba\WebManex\site\BLL\bin\Debug\DAL.dll
+C:\Users\DanToshiba\WebManex\site\BLL\bin\Debug\DAL.pdb
+C:\Users\DanToshiba\WebManex\site\BLL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\DanToshiba\WebManex\site\BLL\obj\Debug\BLL.dll
+C:\Users\DanToshiba\WebManex\site\BLL\obj\Debug\BLL.pdb
