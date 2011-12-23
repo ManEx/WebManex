@@ -1,0 +1,60 @@
+﻿@model site.Models.OrderStatus
+@{
+    ViewBag.Title = @Resources.Order.Status.title;
+}
+    <link type="text/css" href="@Url.Content("~/Content/css/ui.jqgrid.css")" rel="stylesheet" />
+    <div id="navMenu">
+        @Html.Partial("Navigation/Nav", this.Model.Usr)           
+    </div>
+    <div id="content" style="padding:10px">
+    <div> 
+        <span id="companyName" style="color:#fe7c27; font-size: 25px"></span> 
+        <div style="float:right; margin-right:20px">
+            <table>
+                <tr>
+                    <td>
+                        <span>@Resources.Order.Status.selectedCust</span>
+                        <select id="customerDd">
+                            @foreach (KeyValuePair<string, string> cust in this.Model.AssignedCustomers)
+                            {
+                                <option value="@cust.Key">@cust.Value</option>
+                            }
+                        </select>
+                    </td>
+                    <td>
+                        <span>@Resources.Order.Status.orderStatus</span>
+                        <select id="orderStatusDd" onchange="javascript:$order.reloadStatusGrid();">
+                            <option selected="selected" value="All">@Resources.Order.Status.all</option>
+                            <option value="Open">@Resources.Order.Status.open</option>
+                            <option value="Closed30">@Resources.Order.Status.closed30</option>
+                            <option value="Closed90">@Resources.Order.Status.closed90</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="blue" onclick="javascript:$order.reloadStatusGrid()" style="margin:20px 0">@Resources.Order.Status.go</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="float:left; "> 
+        <table id="orders"></table>
+        <div id="ordersPager"></div>
+    </div>
+    <div style="float:left; margin:20px 0"> 
+        <div style="float:left; margin-right:10px;">
+            <table id="duedates"></table>
+            <div id="duedatesPager"></div>
+        </div>
+        <div style="float:right">
+            <table id="shipments"></table>
+            <div id="shipmentsPager"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src='@Url.Content("~/Scripts/grid.locale-en.js")'></script>
+    <script type="text/javascript" src='@Url.Content("~/Scripts/jquery.jqGrid.min.js")'></script>
+    <script type="text/javascript" src='@Url.Content("~/Scripts/orders.js")'></script>
+    <script type="text/javascript">
+        $order.getOrdersByStatus();
+    </script>
+</div>

@@ -1,0 +1,39 @@
+﻿@model site.Models.Admin.UserListModel
+<div style="margin:0px 10px 10px">           
+@Html.Partial("Button", new site.Models.ButtonModel(this.Model.Usr, "showAddUserViewBtn", new string[] { "USERS_Add" },
+    Resources.Account.Register.addUser + " >>", "javascript:$admin.getRegisterNewView()", Resources.Account.Register.addUserDesc, "blue", "", true)) 
+</div> 
+<table cellpadding="0" cellspacing="0" style="width:100%">
+    <tr class="leftColHdr">
+        <td>@Resources.Global.init</td>
+        <td>@Resources.Global.usernameUpper</td>
+        <td>@Resources.Global.seats</td>
+        <td align="center">@Resources.Global.admin</td>
+    </tr>
+@foreach (System.Data.DataRow userRow in this.Model.Users.Rows)
+{      
+    <tr id="@userRow["UserId"].ToString()" class="leftColRow" onclick="javascript:$admin.getEditUserView('@userRow["UserId"].ToString()')">
+        <td>
+            @userRow["Initials"].ToString()
+        </td>
+        <td>@userRow["UserName"].ToString()</td>
+        <td align="center">@userRow["activeSeats"].ToString()</td>
+        <td align="center">
+        @if ((bool)userRow["CompanyAdmin"])
+        {
+            <input type="checkbox" disabled="disabled" checked="checked" />
+        }
+        else
+        {
+            <input type="checkbox" disabled="disabled" />
+        }
+        </td>
+    </tr>
+    
+}
+</table>    
+      
+             
+
+
+

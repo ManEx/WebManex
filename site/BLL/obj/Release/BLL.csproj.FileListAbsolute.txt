@@ -1,0 +1,7 @@
+C:\DansFolder\Projects\eManEx\site\BLL\bin\Release\BLL.dll
+C:\DansFolder\Projects\eManEx\site\BLL\bin\Release\BLL.pdb
+C:\DansFolder\Projects\eManEx\site\BLL\obj\Release\ResolveAssemblyReference.cache
+C:\DansFolder\Projects\eManEx\site\BLL\obj\Release\BLL.dll
+C:\DansFolder\Projects\eManEx\site\BLL\obj\Release\BLL.pdb
+C:\DansFolder\Projects\eManEx\site\BLL\bin\Release\DAL.dll
+C:\DansFolder\Projects\eManEx\site\BLL\bin\Release\DAL.pdb

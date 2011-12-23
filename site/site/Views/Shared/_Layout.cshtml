@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/styles.css")" media="screen" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/jquery-ui-1.8.14.custom.css")" media="screen" />
+	<script type="text/javascript" src='@Url.Content("~/Scripts/global.js")'></script> 
+</head>
+<body>
+    <div id="wrapper">
+        <div id="main"> 
+            @RenderBody()
+        </div>
+    </div>
+    <div id="footer">
+    </div>
+    
+    <script type="text/javascript" src="@Url.Content("~/Scripts/hoverIntent.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/superfish.js")"></script>
+    <script type="text/javascript" src='@Url.Content("~/Scripts/jquery-ui-1.8.14.custom.min.js")'></script>   
+     
+    @*<script type="text/javascript" src='@Url.Content("~/Scripts/grid.locale-en.js")'></script>
+    <script type="text/javascript" src='@Url.Content("~/Scripts/jquery.jqGrid.min.js")'></script>*@
+    <script type="text/javascript">
+    $(document).ready(function () {
+        jQuery(function () {
+            jQuery('ul.sf-menu').superfish({
+                animation: { opacity: 'show', height: 'show' },
+                speed: 300,
+                autoArrows: false
+            });
+            $global.initDialogs();  
+        });
+    });
+    </script>
+</body>
+</html>

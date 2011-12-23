@@ -1,0 +1,24 @@
+﻿@model site.Models.ButtonModel
+
+@if (this.Model.ShowBtn)
+{    
+        
+    <button id="@this.Model.Id" class="@this.Model.CssClass" onclick="@this.Model.JsCall" title="@this.Model.Tooltip">
+        @if (!string.IsNullOrEmpty(Model.IconClass))
+        {
+            <span class="buttonIcon @Model.IconClass"></span>
+            if (this.Model.ShowBtnText)
+            {
+                <span class="btnTextWithIcon">@Model.ButtonText</span>
+            }
+        }
+        else
+        {
+            <span class="btnText">@this.Model.ButtonText</span>
+        }
+    </button>
+    if (this.Model.Usr.IsInRole("GROUP_Edit")) 
+    { 
+        @Html.Partial("RequiredRole", new site.Models.RequiredRoleModel(this.Model.RequiredRoles, this.Model.ButtonDescription)); 
+    }
+}

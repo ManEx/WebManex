@@ -1,0 +1,20 @@
+C:\DansFolder\Projects\eManEx\site\DAL\bin\Debug\DAL.dll
+C:\DansFolder\Projects\eManEx\site\DAL\bin\Debug\DAL.pdb
+C:\DansFolder\Projects\eManEx\site\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\DansFolder\Projects\eManEx\site\DAL\obj\Debug\DAL.dll
+C:\DansFolder\Projects\eManEx\site\DAL\obj\Debug\DAL.pdb
+C:\work\Projects\eManEx\site\DAL\bin\Debug\DAL.dll
+C:\work\Projects\eManEx\site\DAL\bin\Debug\DAL.pdb
+C:\work\Projects\eManEx\site\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\work\Projects\eManEx\site\DAL\obj\Debug\DAL.dll
+C:\work\Projects\eManEx\site\DAL\obj\Debug\DAL.pdb
+C:\Users\DanToshiba\WebManex\site\DAL\bin\Debug\DAL.dll
+C:\Users\DanToshiba\WebManex\site\DAL\bin\Debug\DAL.pdb
+C:\Users\DanToshiba\WebManex\site\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\DanToshiba\WebManex\site\DAL\obj\Debug\DAL.dll
+C:\Users\DanToshiba\WebManex\site\DAL\obj\Debug\DAL.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\DAL\bin\Debug\DAL.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\DAL\bin\Debug\DAL.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\DAL\obj\Debug\DAL.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\DAL\obj\Debug\DAL.pdb

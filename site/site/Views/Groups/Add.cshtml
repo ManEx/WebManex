@@ -1,0 +1,33 @@
+﻿@model site.Models.Admin.GroupsModel
+<h2 class="bodyShdwTxt">@Resources.Account.GroupManagement.addGroupTitle</h2> 
+<div class="ui-widget" id="addError" style="display:none; margin-bottom:10px;">
+    <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	        <span style="clear:both">@Resources.Account.GroupManagement.addError </span>        
+            <div id="errMsg" style="margin-top: -22px; text-align:center"></div>
+    </div>
+</div>
+<div class="ui-widget" id="groupNameReq" style="display:none; margin-bottom:10px;">
+    <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	        <span style="clear:both">@Resources.Account.GroupManagement.missingGroupName </span>
+    </div>
+</div> 
+<input id="groupId" type="hidden" value="@Guid.NewGuid().ToString()" />         
+<table>
+    <tr>
+        <td>@Resources.Account.GroupManagement.groupName</td>
+        <td><input id="groupNameTxt" type="text" /></td>        
+    </tr>
+    <tr>
+        <td>@Resources.Account.GroupManagement.groupDesc</td>
+        <td><input id="groupDescTxt" type="text" style="width:400px" /></td>        
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            @Html.Partial("Button", new site.Models.ButtonModel(this.Model.Usr, "continueBtn", new string[] { "GROUP_Add" },
+                         Resources.Account.GroupManagement.next + " >>", "javascript:$admin.addNewGroup()", Resources.Account.GroupManagement.nextDesc, "blue", "", true))  
+        </td>
+    </tr>
+</table>

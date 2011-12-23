@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="all" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="concurrentUsersBody" xml:space="preserve">
+    <value>You have exceeded the maximum number of users that can log into the system at any given time.</value>
+  </data>
+  <data name="concurrentUsersTitle" xml:space="preserve">
+    <value>Maximum Number of Users Exceeded</value>
+  </data>
+  <data name="customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="eco" xml:space="preserve">
+    <value>ECO</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>email</value>
+  </data>
+  <data name="emailAddressLower" xml:space="preserve">
+    <value>email address</value>
+  </data>
+  <data name="emailAddressUpper" xml:space="preserve">
+    <value>Email address</value>
+  </data>
+  <data name="employees" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="errorAction" xml:space="preserve">
+    <value>Action name</value>
+  </data>
+  <data name="errorBody" xml:space="preserve">
+    <value>An error occured while trying to process your request</value>
+  </data>
+  <data name="errorController" xml:space="preserve">
+    <value>Controller name</value>
+  </data>
+  <data name="errorDetails" xml:space="preserve">
+    <value>Error details</value>
+  </data>
+  <data name="errorExceptionDetail" xml:space="preserve">
+    <value>Exception detail</value>
+  </data>
+  <data name="errorStackTrace" xml:space="preserve">
+    <value>Stack Trace</value>
+  </data>
+  <data name="errorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="goToLogin" xml:space="preserve">
+    <value>Go to Login Page</value>
+  </data>
+  <data name="group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="groups" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="homeModule" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="init" xml:space="preserve">
+    <value>INIT</value>
+  </data>
+  <data name="invalidLicenseBody" xml:space="preserve">
+    <value>This user is an admin but does not have a 'full' license type.  This user has been suspended - please contact your administrator.</value>
+  </data>
+  <data name="invalidLicenseTitle" xml:space="preserve">
+    <value>Invalid License</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="noAccessBody" xml:space="preserve">
+    <value>You do not have access to this module.  If you feel that this is an error, please conact your system administrator.</value>
+  </data>
+  <data name="noAccessTitle" xml:space="preserve">
+    <value>Access Denied</value>
+  </data>
+  <data name="other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="partNumber" xml:space="preserve">
+    <value>Part Number</value>
+  </data>
+  <data name="passwordUpper" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="po" xml:space="preserve">
+    <value>PO</value>
+  </data>
+  <data name="requiredField" xml:space="preserve">
+    <value>Required field</value>
+  </data>
+  <data name="requiredFieldMsg" xml:space="preserve">
+    <value>Please populate all required fields indicated</value>
+  </data>
+  <data name="requiredRoleBtnText" xml:space="preserve">
+    <value>Required role for</value>
+  </data>
+  <data name="rma" xml:space="preserve">
+    <value>RMA</value>
+  </data>
+  <data name="role_admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="saveChanges" xml:space="preserve">
+    <value>Save Changes</value>
+  </data>
+  <data name="saveChangesDesc" xml:space="preserve">
+    <value>Save Button</value>
+  </data>
+  <data name="seats" xml:space="preserve">
+    <value>Active Seats</value>
+  </data>
+  <data name="selectOption" xml:space="preserve">
+    <value>-- Select --</value>
+  </data>
+  <data name="so" xml:space="preserve">
+    <value>SO</value>
+  </data>
+  <data name="supplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="unauthorizedContent" xml:space="preserve">
+    <value>You are not authorized to see this content.  Please login</value>
+  </data>
+  <data name="usernameLower" xml:space="preserve">
+    <value>username</value>
+  </data>
+  <data name="usernameUpper" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="wo" xml:space="preserve">
+    <value>WO</value>
+  </data>
+  <data name="_class" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="assigned" xml:space="preserve">
+    <value>Assigned</value>
+  </data>
+  <data name="unassigned" xml:space="preserve">
+    <value>Unassigned</value>
+  </data>
+</root>

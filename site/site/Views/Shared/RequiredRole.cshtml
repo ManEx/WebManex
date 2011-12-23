@@ -1,0 +1,67 @@
+﻿@model site.Models.RequiredRoleModel
+
+
+<div class="reqRoleModal" id ="@this.Model.ModalId">
+    @foreach (site.Models.RequiredRole rr in this.Model.RequiredRoles)
+    {            
+        <div style="font-weight:bold">@Resources.Account.GroupManagement.requiredRoles</div>
+        <div>@rr.RoleStr</div>
+        <div style="margin-top:20px">
+            <div class="ui-widget" id="@string.Format("success_{0}", rr.Id)" style="display:none; margin-bottom:10px;">
+	            <div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		            <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+                        @Resources.Account.GroupManagement.addRoleToGroupSuccess				
+	            </div>
+            </div>
+            <div class="ui-widget" id="@string.Format("error_{0}", rr.Id)" style="display:none; margin-bottom:10px;">
+                <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	                <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	                    <span style="clear:both">@Resources.Account.GroupManagement.addRoleToGroupError </span>        
+                        <div id="@string.Format("errMsg_{0}", rr.Id)"  style="text-align:center"></div>
+                </div>
+            </div>
+            @Resources.Account.GroupManagement.addRoleToGroupTitle
+            <div style="margin-bottom:4px">
+                @Resources.Account.Register.filter
+                <select id="@string.Format("{0}_filterDd", rr.Id)" onchange="$global.filterSmallTable('@string.Format("{0}_roleGroup", rr.Id)', '@string.Format("{0}_filterDd", rr.Id)', '@string.Format("{0}_groupRole", rr.Id)')">
+                    <option value="All">@Resources.Global.all</option>
+                    <option value="Assigned">@Resources.Global.assigned</option>
+                    <option value="Unassigned">@Resources.Global.unassigned</option>
+                </select>
+            </div>
+            <div class="smallTbl">
+                <table cellpadding="0" cellspacing="0" border="1" bordercolor="#cccccc" rules="rows">                    
+                    <thead>
+                        <tr>
+                            <th class="smallTbl_hdr" colspan="2">@Resources.Account.GroupManagement.groupName</th>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+
+                    @foreach (System.Data.DataRow groupRow in rr.RolesDt.Rows)
+                    {
+                        <tr id="@string.Format("{0}_groupRole", rr.Id)@groupRow["Groupid"]" >
+                            <td>
+                            @if ((bool)groupRow["Assigned"])
+                            {
+                                <input class="@string.Format("{0}_roleGroup", rr.Id)" id="@groupRow["Groupid"]" type="checkbox" checked="checked" />
+                            }
+                            else
+                            {
+                                <input class="@string.Format("{0}_roleGroup", rr.Id)" id="@groupRow["Groupid"]" type="checkbox"  />
+                            }
+                            </td>
+                            <td style="width:100%">@groupRow["groupName"].ToString()</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+            <center><button class="blue" onclick="javascript:$global.addRoleToGroup('@rr.RoleStr', '@rr.Id')">@Resources.Global.update</button></center>
+        </div>    
+    }
+</div>
+
+<a class="reqRoleLink" title="@Resources.Global.requiredRoleBtnText @this.Model.FunctionalityName" href="javascript:$global.openDialog('@this.Model.ModalId', '@Resources.Global.requiredRoleBtnText @this.Model.FunctionalityName');">
+    <span class="ui-icon-locked"></span>
+</a>

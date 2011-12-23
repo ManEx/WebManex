@@ -1,0 +1,56 @@
+C:\DansFolder\Projects\eManEx\site\site\bin\site.dll
+C:\DansFolder\Projects\eManEx\site\site\bin\site.pdb
+C:\DansFolder\Projects\eManEx\site\site\bin\BLL.dll
+C:\DansFolder\Projects\eManEx\site\site\bin\EntityFramework.dll
+C:\DansFolder\Projects\eManEx\site\site\bin\Resources.dll
+C:\DansFolder\Projects\eManEx\site\site\bin\DAL.dll
+C:\DansFolder\Projects\eManEx\site\site\bin\BLL.pdb
+C:\DansFolder\Projects\eManEx\site\site\bin\Resources.pdb
+C:\DansFolder\Projects\eManEx\site\site\bin\EntityFramework.xml
+C:\DansFolder\Projects\eManEx\site\site\bin\DAL.pdb
+C:\DansFolder\Projects\eManEx\site\site\bin\es\Resources.resources.dll
+C:\DansFolder\Projects\eManEx\site\site\obj\Debug\ResolveAssemblyReference.cache
+C:\DansFolder\Projects\eManEx\site\site\obj\Debug\site.dll
+C:\DansFolder\Projects\eManEx\site\site\obj\Debug\site.pdb
+C:\work\Projects\eManEx\site\site\bin\site.dll
+C:\work\Projects\eManEx\site\site\bin\site.pdb
+C:\work\Projects\eManEx\site\site\bin\BLL.dll
+C:\work\Projects\eManEx\site\site\bin\EntityFramework.dll
+C:\work\Projects\eManEx\site\site\bin\Resources.dll
+C:\work\Projects\eManEx\site\site\bin\DAL.dll
+C:\work\Projects\eManEx\site\site\bin\BLL.pdb
+C:\work\Projects\eManEx\site\site\bin\Resources.pdb
+C:\work\Projects\eManEx\site\site\bin\EntityFramework.xml
+C:\work\Projects\eManEx\site\site\bin\DAL.pdb
+C:\work\Projects\eManEx\site\site\bin\es\Resources.resources.dll
+C:\work\Projects\eManEx\site\site\obj\Debug\ResolveAssemblyReference.cache
+C:\work\Projects\eManEx\site\site\obj\Debug\site.dll
+C:\work\Projects\eManEx\site\site\obj\Debug\site.pdb
+C:\Users\DanToshiba\WebManex\site\site\bin\site.dll
+C:\Users\DanToshiba\WebManex\site\site\bin\site.pdb
+C:\Users\DanToshiba\WebManex\site\site\bin\BLL.dll
+C:\Users\DanToshiba\WebManex\site\site\bin\EntityFramework.dll
+C:\Users\DanToshiba\WebManex\site\site\bin\Resources.dll
+C:\Users\DanToshiba\WebManex\site\site\bin\DAL.dll
+C:\Users\DanToshiba\WebManex\site\site\bin\BLL.pdb
+C:\Users\DanToshiba\WebManex\site\site\bin\Resources.pdb
+C:\Users\DanToshiba\WebManex\site\site\bin\EntityFramework.xml
+C:\Users\DanToshiba\WebManex\site\site\bin\DAL.pdb
+C:\Users\DanToshiba\WebManex\site\site\bin\es\Resources.resources.dll
+C:\Users\DanToshiba\WebManex\site\site\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\DanToshiba\WebManex\site\site\obj\Debug\site.dll
+C:\Users\DanToshiba\WebManex\site\site\obj\Debug\site.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\bin\site.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\bin\site.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\bin\BLL.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\bin\EntityFramework.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\bin\Resources.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\bin\DAL.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\bin\BLL.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\bin\Resources.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\bin\EntityFramework.xml
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\bin\DAL.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\bin\es\Resources.resources.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\obj\Debug\site.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site\obj\Debug\site.pdb

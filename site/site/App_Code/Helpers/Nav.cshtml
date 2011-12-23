@@ -1,0 +1,164 @@
+﻿@helper NavMenu(site.Classes.UI.Module Module, Dictionary<string, string> FavLinks  ) {
+    <div id="userInfo">        
+        <span>@Resources.Shared.Nav.welcome @User.Identity.Name</span>&nbsp;
+        <a href="@Href("~/Account/LogOff")">@Resources.Shared.Nav.logout</a>
+    </div>
+    <ul class="sf-menu">        
+	    <li class="current">
+		    <a id="mxMnu" class="mnuIcon"></a>
+		    <ul>
+			    <li>
+				    <a href="#aa">@Resources.Shared.Nav.openModule</a>
+			    </li>
+			    <li >
+				    <a href="#ab">@Resources.Shared.Nav.setup</a>				    
+			    </li>
+			    <li>
+				    <a href="#">@Resources.Shared.Nav.security</a>				    
+			    </li>
+                <li>
+				    <a href="#">@Resources.Shared.Nav.updateCheck</a>				    
+			    </li>
+			    <li>
+				    <a href="#">@Resources.Shared.Nav.aboutManex</a>				    
+			    </li>
+                <li class="lastItem">
+				    <a href="#">@Resources.Shared.Nav.closeManex</a>				    
+			    </li>
+		    </ul>
+	    </li>
+	    <li>
+		    <a id="helpMnu" class="mnuIcon" href="#"></a>
+            <ul>
+                <li>
+				    <a href="#">@Resources.Shared.Nav.kb</a>				    
+			    </li>
+                <li>
+				    <a href="#">@Resources.Shared.Nav.tickets</a>				    
+			    </li>
+                <li>
+				    <a href="#">@Resources.Shared.Nav.videoTraining</a>				    
+			    </li>
+                <li>
+				    <a href="#">@Resources.Shared.Nav.userForum</a>				    
+			    </li>
+                <li class="lastItem">
+				    <a href="#">@Resources.Shared.Nav.contactManex</a>				    
+			    </li>			    
+		    </ul>
+	    </li>
+	    <li>
+		    <a id="searchMnu" class="mnuIcon" href="javascript:toggleSearch()"></a>		
+	    </li>
+	    <li>
+		    <a id="navMnu" class="mnuIcon" href="#"></a>
+	    </li>
+        <li>
+            <a id="favMnu" class="mnuIcon" href="#"></a>
+            @if (FavLinks != null) { int i = 0;
+            <ul>
+                @foreach (KeyValuePair<string, string> fav in FavLinks) { i++;                        
+                    string css = "";
+                    if(FavLinks.Count == i) { css = "lastItem"; }
+                    <li class="@css">                                 
+                        <a href="@fav.Value">@fav.Key</a>
+                    </li>
+                }
+            </ul>
+            }
+        </li>
+        @if (Module != null) {
+            <li id="moduleIcon">
+                <a id="@Module.Id" class="@Module.IconCssClass" href="@Module.HomePage">
+                    <span >@Module.Name</span>                   
+                </a>       
+                <ul>
+                    @foreach (KeyValuePair<string, string> link in Module.Links) {
+                        <li>
+                            <a href="@link.Value">@link.Key</a>
+                        </li>}                        
+                </ul>
+                
+            </li>                
+            <li>
+                 @*@if (Module.IsFavorite)
+                {
+                            <a class="fav remFav"></a>
+                }
+                else
+                {
+                            <a class="fav addFav"></a>
+                } *@ 
+            </li>
+        }  
+    </ul>
+    <div id="searchNav">
+        <div id="topPanel">
+            <input id="searchText" type="text" />
+            <select id="searchDd1" onchange="searchSubMnuSel()">                
+                <option value="pn">@Resources.Shared.Nav.searchPn</option>
+                <option value="rn">@Resources.Shared.Nav.searchRn</option>
+                <option value="nm">@Resources.Shared.Nav.searchNm</option>
+                <option value="oth">@Resources.Shared.Nav.searchOth</option>
+                <option selected="true" value="all">@Resources.Shared.Nav.searchAll</option>
+                <option value="rpt">@Resources.Shared.Nav.searchRpts</option>
+                <option value="mdl">@Resources.Shared.Nav.searchMdls</option>
+            </select>
+            <select id="searchDd2">
+            </select>
+            <select id="pnOptions" style="display:none;">
+                <option value="pnAll">@Resources.Shared.Nav.searchAll2</option>
+                <option value="pnInt">@Resources.Shared.Nav.searchPnInt</option>
+                <option value="pnCust">@Resources.Shared.Nav.searchPnCust</option>
+                <option value="pnSup">@Resources.Shared.Nav.searchPnSup</option>
+            </select>
+            <select id="rnOptions" style="display:none;">
+                <option value="rnAll">@Resources.Shared.Nav.searchAll2</option>
+                <option value="rnSo">@Resources.Shared.Nav.searchRnSo</option>
+                <option value="rnWo">@Resources.Shared.Nav.searchRnWo</option>
+                <option value="rnOth">@Resources.Shared.Nav.searchRnOther</option>
+            </select>
+            <select id="nmOptions" style="display:none;">
+                <option value="nmAll">@Resources.Shared.Nav.searchAll2</option>
+                <option value="nmInt">@Resources.Shared.Nav.searchNmCust</option>
+                <option value="nmCust">@Resources.Shared.Nav.searchNmSalesRep</option>
+                <option value="nmSup">@Resources.Shared.Nav.searchNmContacts</option>
+            </select>
+            <select id="othOptions" style="display:none;">
+                <option value="othAll">@Resources.Shared.Nav.searchAll2</option>
+                <option value="othSn">@Resources.Shared.Nav.searchOthSn</option>
+            </select>
+        </div>
+        <div id="botPanel">
+        </div>
+    </div>
+    <script type="text/javascript">
+        function toggleSearch() {
+            if ($("#searchNav")[0].style.marginTop == "0px") {
+                $("#searchNav").animate({ marginTop: "-50px" }, { queue: false, duration: 300 });
+                $("#botPanel")[0].style.display = "none";
+                $("#searchMnu").css('backgroundPosition', '-82px -8px');
+            }
+            else {
+                $("#searchMnu").parent().attr('class', 'sfHover');
+                $("#searchNav").animate({ marginTop: "0px" }, { queue: false, duration: 300 });
+                $("#searchText")[0].focus();
+                $("#searchMnu").css('backgroundPosition', '-82px -48px');
+            }
+        };
+
+        function searchSubMnuSel() {
+            try{
+                var selected = $('#searchDd1').val() + "Options";
+                var subMnu = $('#searchDd2')[0];
+                subMnu.innerHTML = $("#" + selected)[0].innerHTML;
+                $('#searchDd2')[0].focus();
+            }
+            catch (exc)
+            {
+                $('#searchDd2')[0].innerHTML = "";
+            }
+        }
+    </script>
+    
+}
