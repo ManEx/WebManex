@@ -1,0 +1,24 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+<center>
+<h2 class="bodyShdwTxt">@Resources.Global.errorTitle</h2>
+@Resources.Global.errorBody<br /><br />
+<div><h2>@Resources.Global.errorDetails</h2></div>
+<table>
+    <tr>
+        <td align="left">@Resources.Global.errorController: </td>
+        <td align="left">@this.Model.ControllerName</td>
+    </tr>
+    <tr>
+        <td align="left">@Resources.Global.errorAction: </td>
+        <td align="left">@this.Model.ActionName</td>
+    </tr>
+    <tr>
+        <td align="left">@Resources.Global.errorExceptionDetail: </td>
+        <td align="left">@this.Model.Exception.Message</td>
+    </tr>
+    @*<tr>
+        <td align="left">@Resources.Global.errorStackTrace: </td>
+        <td align="left">@this.Model.Exception.StackTrace</td>
+    </tr>*@
+</table>
+</center>

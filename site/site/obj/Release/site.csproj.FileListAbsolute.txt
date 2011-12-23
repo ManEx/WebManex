@@ -1,0 +1,12 @@
+C:\DansFolder\Projects\eManEx\site\site\bin\site.dll
+C:\DansFolder\Projects\eManEx\site\site\bin\site.pdb
+C:\DansFolder\Projects\eManEx\site\site\bin\EntityFramework.dll
+C:\DansFolder\Projects\eManEx\site\site\bin\Resources.dll
+C:\DansFolder\Projects\eManEx\site\site\bin\Resources.pdb
+C:\DansFolder\Projects\eManEx\site\site\bin\EntityFramework.xml
+C:\DansFolder\Projects\eManEx\site\site\bin\es\Resources.resources.dll
+C:\DansFolder\Projects\eManEx\site\site\obj\Release\ResolveAssemblyReference.cache
+C:\DansFolder\Projects\eManEx\site\site\obj\Release\site.dll
+C:\DansFolder\Projects\eManEx\site\site\obj\Release\site.pdb
+C:\DansFolder\Projects\eManEx\site\site\bin\BLL.dll
+C:\DansFolder\Projects\eManEx\site\site\bin\BLL.pdb

@@ -1,0 +1,51 @@
+﻿@model site.Models.UserModel
+
+<h2 class="bodyShdwTxt">@Resources.Account.Register.detailsFor<span>&nbsp;@this.Model.DisplayName</span></h2>
+
+<div class="ui-widget" id="editConfirm" style="display:none; margin-bottom:10px;">
+	<div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+            @Resources.Account.Register.editConfirmation				
+	</div>
+</div>
+<div class="ui-widget" id="editError" style="display:none; margin-bottom:10px;">
+    <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	        @Resources.Account.Register.editUnsuccessful
+    </div>
+</div>
+
+<table>
+    <tr>
+        <td><span id="initialsLbl">@Resources.Account.Register.init</span></td>
+        <td><span id="fNameLbl">@Resources.Account.Register.firstName</span></td>
+        <td><span id="lNameLbl">@Resources.Account.Register.lastName</span></td>
+        <td><span id="emailLbl">@Resources.Account.Register.email</span></td>
+    </tr>
+    <tr>
+        <td><input id="initialsTxt" type="text" value="@this.Model.Initials" /></td>
+        <td><input id="fNameTxt" type="text" value="@this.Model.FirstName" /></td>
+        <td><input id="lNameTxt" type="text" value="@this.Model.LastName" /></td>
+        <td><input id="emailTxt" type="text" value="@this.Model.Email" /></td>
+    </tr>
+</table>
+<div>
+    @if (this.Model.IsCompanyAdmin)
+    {
+    <input id="companyAdminChB" type="checkbox" checked="checked" />
+    }
+    else
+    {     
+    <input id="companyAdminChB" type="checkbox" />
+    }
+    <span>@Resources.Account.Register.adminUser</span>
+</div>
+<div>
+    <input id="forceChangePwChB" type="checkbox" /><span>@Resources.Account.Register.userPwChange</span>
+</div>
+<div>
+    <div>@Resources.Account.Register.assignedCompany</div>
+    <div><input id="companyIdTxt" type="text" /></div>
+</div>
+<button class="blue" onclick="javascript:$account.validateEdit()" style="margin:20px 0">@Resources.Account.Register.saveChanges</button>
+<input id="userIdTxt" type="hidden" value="@this.Model.MbrUser.ProviderUserKey.ToString()" />

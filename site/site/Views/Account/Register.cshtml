@@ -1,0 +1,25 @@
+﻿@model site.Models.RegisterModel
+
+@{
+    ViewBag.Title = @Resources.Account.Register.register;
+}
+<div id="navMenu">
+    @Helpers.TempNav.Nav()
+</div>
+<div id="content">
+    <div class="leftCol">
+        <div id="userListContainer">
+            @Html.Partial("UserList", site.Models.UserModel.GetAllUsers())
+        </div>
+        <div class="SpacerRow"></div>
+    </div>
+    <div class="mainContent">
+        <div id="registerNewContainer">
+            @Html.Partial("RegisterNew")
+        </div>
+        <div id="editUserContainer" style="display:none">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../Scripts/account.js"></script>
+<script type="text/javascript" src="../../Scripts/global.js"></script>

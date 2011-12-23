@@ -1,0 +1,159 @@
+﻿@model site.Models.Admin.GroupsModel
+           
+<h2 class="bodyShdwTxt">@Resources.Account.GroupManagement.title<span>@this.Model.GroupName</span></h2>
+<div class="ui-widget" id="editConfirm" style="display:none; margin-bottom:10px;">
+	<div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+            @Resources.Account.GroupManagement.editConfirmation				
+	</div>
+</div>
+<div class="ui-widget" id="delConfirm" style="display:none; margin-bottom:10px;">
+	<div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+            @Resources.Account.GroupManagement.deleteConfirmation				
+	</div>
+</div>
+<div class="ui-widget" id="editError" style="display:none; margin-bottom:10px;">
+    <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	        <span style="clear:both">@Resources.Account.GroupManagement.error </span>        
+            <div id="errMsg" style="margin-top: -22px; text-align:center"></div>
+    </div>
+</div>
+<div class="ui-widget" id="delError" style="display:none; margin-bottom:10px;">
+    <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	        <span style="clear:both">@Resources.Account.GroupManagement.delError </span>        
+            <div id="errMsg" style="margin-top: -22px; text-align:center"></div>
+    </div>
+</div>
+<input type="hidden" value="@Model.GroupId" id="groupIdTxt" />
+<input type="hidden" value="@Resources.Account.GroupManagement.deleteAreYouSure" id="delConfTxt" />
+<div style="width:750px; margin-bottom:10px;" class="group" >
+    <div style="margin-bottom:10px; display:inline;">
+        @Resources.Account.Register.filter
+        <select id="filterGroupDd" onchange="$admin.filterGroup()">
+            <option value="All">@Resources.Global.all</option>
+            <option value="Assigned">@Resources.Global.assigned</option>
+            <option value="Unassigned">@Resources.Global.unassigned</option>
+        </select>
+
+        @Resources.Account.GroupManagement.groupName: <input id="groupNameTxt" type="text" value="@this.Model.GroupName" />
+    </div>
+    @if (this.Model.Usr.IsInRole("GROUP_Edit") || this.Model.Adding)
+        {
+            @Html.Partial("Button", new site.Models.ButtonModel(this.Model.Usr, "saveGroupBtn", new string[] { "GROUP_Edit", "GROUP_Add" },
+                    Resources.Global.saveChanges, "javascript:$admin.editGroup()", Resources.Global.saveChangesDesc, "blue", "save", false)) 
+        }
+    @Html.Partial("Button", new site.Models.ButtonModel(this.Model.Usr, "saveGroupBtn", new string[] { "GROUP_Delete" },
+            Resources.Account.GroupManagement.deleteGroup, "javascript:$admin.delGroupConf()", Resources.Account.GroupManagement.deleteGroupDesc, "orange", "delete", false)) 
+    
+</div>
+<table cellpadding="0" cellspacing="0" >        
+    <tr>
+        <td style="padding-left:3px; width:24px"><input id="allRolesChB" class="tt" title="@Resources.Account.GroupManagement.allRoles" onchange="$admin.toggleRoles()" type="checkbox" /></td>
+        <td style="width:350px; text-align:left" class="largeTbl_hdr">@Resources.Account.GroupManagement.name</td>
+        <td class="largeTbl_hdr">
+            <input id="viewColumnChB" type="checkbox" onchange="javascript:$admin.toggleClassRoles('viewColumnChB', 'viewRole')" title="@Resources.Account.GroupManagement.selectAllColumn" />
+            @Resources.Account.GroupManagement.view
+        </td>
+        <td class="largeTbl_hdr">
+            <input id="addColumnChB" type="checkbox" onchange="javascript:$admin.toggleClassRoles('addColumnChB', 'addRole')" title="@Resources.Account.GroupManagement.selectAllColumn" />
+            @Resources.Account.GroupManagement.add
+        </td>
+        <td class="largeTbl_hdr">
+            <input id="editColumnChB" type="checkbox" onchange="javascript:$admin.toggleClassRoles('editColumnChB', 'editRole')" title="@Resources.Account.GroupManagement.selectAllColumn" />
+            @Resources.Account.GroupManagement.edit
+        </td>
+        <td class="largeTbl_hdr">
+            <input id="deleteColumnChB" type="checkbox" onchange="javascript:$admin.toggleClassRoles('deleteColumnChB', 'deleteRole')" title="@Resources.Account.GroupManagement.selectAllColumn" />
+            @Resources.Account.GroupManagement.delete</td>
+        <td class="largeTbl_hdr">
+            <input id="reportsColumnChB" type="checkbox" onchange="javascript:$admin.toggleClassRoles('reportsColumnChB', 'reportsRole')" title="@Resources.Account.GroupManagement.selectAllColumn" />
+            @Resources.Account.GroupManagement.reports</td>
+    </tr>
+</table>
+<div class="largeTbl">
+    
+    <table cellpadding="0" cellspacing="0" border="1" bordercolor="#cccccc" rules="rows">   
+    @foreach (site.Models.Admin.GroupSection gs in this.Model.GroupSections)
+    {
+        if (gs.ViewRole != null)
+        {
+        <tr class="groupRow" id="@gs.Name">
+            <td style="width:22px">
+                <input id="@gs.Id" type="checkbox" class="tt" title="@Resources.Account.GroupManagement.rowRoles" onchange="javascript:$admin.toggleClassRoles('@gs.Id', '@gs.Name')" />
+            </td>
+            <td style="width:450px">
+                @gs.Name
+            </td>
+            <td align="center">
+                @if (gs.ViewRole != null)
+                {
+                    if (gs.ViewRole.Assigned)
+                    {
+                        <input class="roleChB @gs.Name viewRole" id="@gs.ViewRole.RoleId.ToString()" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {
+                        <input class="roleChB @gs.Name viewRole" id="@gs.ViewRole.RoleId.ToString()" type="checkbox" />
+                    }
+                }
+            </td>
+            <td align="center">
+                @if (gs.AddRole != null)
+                {
+                    if (gs.AddRole.Assigned)
+                    {
+                        <input class="roleChB @gs.Name addRole" id="@gs.AddRole.RoleId.ToString()" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {
+                        <input class="roleChB @gs.Name addRole" id="@gs.AddRole.RoleId.ToString()" type="checkbox" />
+                    }
+                }
+            </td>
+            <td align="center">
+                @if (gs.EditRole != null)
+                {
+                    if (gs.EditRole.Assigned)
+                    {
+                        <input class="roleChB @gs.Name editRole" id="@gs.EditRole.RoleId.ToString()" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {
+                        <input class="roleChB @gs.Name editRole" id="@gs.EditRole.RoleId.ToString()" type="checkbox" />
+                    }
+                }
+            </td>
+            <td align="center">
+                @if (gs.DeleteRole != null)
+                {
+                    if (gs.DeleteRole.Assigned)
+                    {
+                        <input class="roleChB @gs.Name deleteRole" id="@gs.DeleteRole.RoleId.ToString()" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {
+                        <input class="roleChB @gs.Name deleteRole" id="@gs.DeleteRole.RoleId.ToString()" type="checkbox" />
+                    }
+                }
+            </td>
+            <td align="center">
+                @if (gs.ReportsRole != null)
+                {
+                    if (gs.ReportsRole.Assigned)
+                    {
+                        <input class="roleChB @gs.Name reportsRole" id="@gs.ReportsRole.RoleId.ToString()" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {
+                        <input class="roleChB @gs.Name reportsRole" id="@gs.ReportsRole.RoleId.ToString()" type="checkbox" />
+                    }
+                }
+            </td>
+        </tr>
+        }
+    }
+    </table>
+</div>

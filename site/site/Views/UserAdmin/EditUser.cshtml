@@ -1,0 +1,328 @@
+﻿@model site.Models.Admin.EditUserModel
+
+
+<div id="editUserContent">
+    <div id="rolesModal" title="Assigned Roles">
+        @foreach (string role in this.Model.EditUser.Roles)
+        {
+            <div>@role</div>
+        }
+    </div>
+    <h2 class="bodyShdwTxt">@Resources.Account.Register.detailsFor<span>&nbsp;@this.Model.EditUser.DisplayName</span></h2>
+    <input type="hidden" id="confirmDeleteTxt" value="@Resources.Account.Register.deleteUserConfirm" />
+    <input type="hidden" id="userNameTxt" value="@this.Model.EditUser.MbrUser.UserName" />
+
+
+    <div class="ui-widget" id="editConfirm" style="display:none; margin-bottom:10px;">
+	    <div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+                @Resources.Account.Register.editConfirmation				
+	    </div>
+    </div>
+    <div class="ui-widget" id="clearSuccess" style="display:none; margin-bottom:10px;">
+	    <div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+                @Resources.Account.Register.clearUserSeatsSuccess				
+	    </div>
+    </div>
+    <div class="ui-widget" id="clearError" style="display:none; margin-bottom:10px;">
+	    <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+		    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+                @Resources.Account.Register.clearUserSeatsError				
+	    </div>
+    </div>
+    <div class="ui-widget" id="deleteConfirm" style="display:none; margin-bottom:10px;">
+	    <div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+                @Resources.Account.Register.deleteUserSuccess				
+	    </div>
+    </div>
+    <div class="ui-widget" id="licTypeWarning" style="display:none; margin-bottom:10px;">
+	    <div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+                @Resources.Account.Register.licenseTypeChangeWarning				
+	    </div>
+    </div>
+    <div class="ui-widget" id="editError" style="display:none; margin-bottom:10px;">
+        <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	        <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	            <span style="clear:both">@Resources.Account.Register.editUnsuccessful </span>        
+                <div id="errMsg" style="margin-top: -22px; text-align:center"></div>
+        </div>
+    </div>
+    <div class="ui-widget" id="regMissingFields" style="display:none; margin-bottom:10px;">
+        <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	        <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	            @Resources.Global.requiredFieldMsg
+        </div>
+    </div>
+    <div id="currentUserInfo">
+    <table>
+        <tr>
+            <td><span id="usernameLbl">@Resources.Account.Register.username</span></td>
+            <td><span id="licenseTypeLbl">@Resources.Account.Register.licenseType</span></td>
+            <td rowspan="2" colspan="2" valign="bottom">
+                <div style="margin-left:20px">
+                    @Html.Partial("Button", new site.Models.ButtonModel( this.Model.Usr, "saveChangesBtn", new string[] { "USERS_Edit" }, 
+                        Resources.Account.Register.saveChanges, "javascript:$admin.validateEdit()", Resources.Account.Register.editButton, "blue", "save", false))    
+        
+                    @Html.Partial("Button", new site.Models.ButtonModel(this.Model.Usr, "delUserBtn", new string[] { "USERS_Delete" }, 
+                        Resources.Account.Register.deleteUser, "javascript:$admin.deleteUser()", Resources.Account.Register.deleteUserDesc, "orange", "delete", false))    
+        
+                    @Html.Partial("Button", new site.Models.ButtonModel( this.Model.Usr, "viewRolesBtn", new string[] { "USERS_View" },
+                                Resources.Account.Register.viewRoles, "", Resources.Account.Register.viewRolesDesc, "blue", "roles", false)) 
+
+                    @if (this.Model.EditUser.ShowClearSeats)
+                    {
+                        @Html.Partial("Button", new site.Models.ButtonModel(this.Model.Usr, "clearSeatsBtn", new string[] { "USERS_Edit" },
+                            Resources.Account.Register.clearUserSeats, "javascript:$admin.clearUserSeats('" + this.Model.EditUser.MbrUser.ProviderUserKey.ToString() + "')",
+                            Resources.Account.Register.clearUserSeatsDesc, "blue", "", true)) 
+                    }
+                </div>
+            </td>
+        </tr>
+        <tr>        
+            <td>
+                <input id="usernameTxt" disabled="disabled" type="text" value="@this.Model.EditUser.MbrUser.UserName" />            
+            </td>
+            <td>
+                <select id="licenseTypeDD" onchange="javascript:$('#licTypeWarning').css('display', 'block'); changedLicenseType=true;">
+                    <option value="">@Resources.Global.selectOption</option>
+                    <option value="full">@Resources.Account.Register.licenseTypeFull</option>
+                    <option value="prodcution">@Resources.Account.Register.licenseTypeProduction</option>
+                    <option value="customer">@Resources.Account.Register.licenseTypeCust</option>
+                    <option value="supplier">@Resources.Account.Register.licenstTypeSupplier</option>
+                    <option value="view">@Resources.Account.Register.licenseTypeView</option>
+                </select>
+            </td>        
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><span id="initialsLbl">@Resources.Account.Register.initials</span></td>
+            <td><span id="fNameLbl">@Resources.Account.Register.firstName</span></td>
+            <td><span id="lNameLbl">@Resources.Account.Register.lastName</span></td>
+            <td><span id="emailLbl">@Resources.Account.Register.email</span></td>
+        </tr>
+        <tr>
+            <td><input id="initialsTxt" style="width:50px" type="text" value="@this.Model.EditUser.Initials" /></td>
+            <td><input id="fNameTxt" type="text" value="@this.Model.EditUser.FirstName" /></td>
+            <td><input id="lNameTxt" type="text" value="@this.Model.EditUser.LastName" /></td>
+            <td><input id="emailTxt" style="width:250px"type="text" value="@this.Model.EditUser.Email" /></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td valign="top">
+                <fieldset style="width:230px"> 
+                    <legend>@Resources.Account.Register.superUsers</legend>
+                    @if (this.Model.EditUser.IsAcctAdmin)
+                    {
+                    <input id="acctAdminChB" onchange="$admin.superUserToggle();" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {     
+                    <input id="acctAdminChB" onchange="$admin.superUserToggle();" type="checkbox" />
+                    }
+                    <span>@Resources.Account.Register.acctSuperUser</span><br />
+                    @if (this.Model.EditUser.IsProdAdmin)
+                    {
+                    <input id="prodAdminChB" onchange="$admin.superUserToggle();" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {     
+                    <input id="prodAdminChB" onchange="$admin.superUserToggle();" type="checkbox" />
+                    }
+                    <span>@Resources.Account.Register.prodSuperUser</span><br />
+                    @if (this.Model.EditUser.IsCompanyAdmin)
+                    {
+                    <input id="companyAdminChB" onchange="$admin.superUserToggle();" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {     
+                    <input id="companyAdminChB" onchange="$admin.superUserToggle();" type="checkbox" />
+                    }
+                    <span>@Resources.Account.Register.adminUser</span>
+                </fieldset>
+            </td>
+            <td valign="top">
+                <fieldset  style="width:230px; margin-left: 15px;">
+                    <legend>@Resources.Account.Register.statusPw</legend>
+                    @if (!this.Model.EditUser.MbrUser.IsApproved)
+                    {
+                        <input id="userApprovedChB" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {     
+                        <input id="userApprovedChB" type="checkbox" />
+                    }
+                    <span>@Resources.Account.Register.userApproved</span><br />
+                    <input id="forceChangePwChB" type="checkbox" />
+                    <span>@Resources.Account.Register.userPwChange</span><br />
+                    @if (this.Model.EditUser.CantChangePw)
+                    {
+                        <input id="cantChangePwChB" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {     
+                        <input id="cantChangePwChB" type="checkbox" />
+                    }
+                    <span>@Resources.Account.Register.cantChangePw</span><br />
+                    <span style="margin-left:4px">@Resources.Account.Register.passwordExpireInterval</span><input style="width:30px" type="text" id="pwExpIntervalTxt" onkeypress="return $global.onlyNumbers(event);" value="@this.Model.EditUser.PwExpireInterval" /><br />
+                    <span style="margin-left:4px">@Resources.Account.Register.timeoutLimit</span><input style="width:30px" type="text" id="timeoutTxt" onkeypress="return $global.onlyNumbers(event);" value="@this.Model.EditUser.TimeoutLimit" />
+
+                </fieldset>
+            </td>
+            <td valign="top">
+                <fieldset style="width:230px; margin-left: 15px;">
+                    <legend>@Resources.Account.Register.userType</legend>
+                    @if (this.Model.EditUser.IsExempt)
+                    {
+                        <input id="exemptChB" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {
+                        <input id="exemptChB" type="checkbox" />
+                    }
+                    <span>@Resources.Account.Register.exempt</span><br />
+                    @if (this.Model.EditUser.IsExternal)
+                    {
+                        <input id="externalChB" type="checkbox" checked="checked" />
+                    }
+                    else
+                    {
+                        <input id="externalChB" type="checkbox" />
+                    }
+                    <span>@Resources.Account.Register.external</span>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span>@Resources.Account.Register.lastLoginDate</span><span>: @this.Model.EditUser.LastLoginDate.ToString()</span><br />
+                <span>@Resources.Account.Register.lastPwChangeDate</span><span>: @this.Model.EditUser.LastPwChangeDate.ToString()</span>
+            </td>
+        </tr>    
+    </table>
+
+    <div style="margin:20px 0px">
+        <div style="float:left">
+            <div style="margin-bottom:4px">
+                @Resources.Account.Register.filter
+                <select id="editGroupsDd" onchange="$global.filterSmallTable('editGroupChB', 'editGroupsDd', 'editGroupRow.')">
+                    <option value="All">@Resources.Global.all</option>
+                    <option value="Assigned">@Resources.Global.assigned</option>
+                    <option value="Unassigned">@Resources.Global.unassigned</option>
+                </select>
+            </div>
+            <div class="smallTbl" >
+                <table cellpadding="0" cellspacing="0" border="1" bordercolor="#cccccc" rules="rows">                    
+                    <thead>
+                        <tr>
+                            <th class="smallTbl_hdr" colspan="2">@Resources.Account.Register.groups <span style="font-weight:normal">(<a  href="Groups">@Resources.Account.GroupManagement.manageGroups</a>)</span></th>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                    @foreach (System.Data.DataRow groupRow in this.Model.EditUser.Groups.Rows)
+                    {
+                        <tr id="editGroupRow.@groupRow["Groupid"]" >
+                            <td>
+                            @if ((bool)groupRow["Assigned"])
+                            {
+                                <input class="editGroupChB" id="@groupRow["Groupid"]" type="checkbox" checked="checked" />
+                            }
+                            else
+                            {
+                                <input class="editGroupChB" id="@groupRow["Groupid"]" type="checkbox"  />
+                            }
+                            </td>
+                            <td style="width:100%">@groupRow["groupName"].ToString()</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+        <div style="float:left; margin-left:20px">
+            <div style="margin-bottom:4px">
+                @Resources.Account.Register.filter
+                <select id="editCustomersDd" onchange="$global.filterSmallTable('editCustomerChB', 'editCustomersDd', 'editCustRow.')">
+                    <option value="All">@Resources.Global.all</option>
+                    <option value="Assigned">@Resources.Global.assigned</option>
+                    <option value="Unassigned">@Resources.Global.unassigned</option>
+                </select>
+            </div>
+            <div class="smallTbl" >
+                <table cellpadding="0" cellspacing="0" border="1" bordercolor="#cccccc" rules="rows">                    
+                    <thead>
+                        <tr>
+                            <th class="smallTbl_hdr" colspan="2">@Resources.Account.Register.availCustomers</th>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                    @foreach (System.Data.DataRow custRow in this.Model.EditUser.Customers.Rows)
+                    {
+                        <tr id="editCustRow.@custRow["Custno"]" >
+                            <td>
+                            @if ((bool)custRow["Assigned"])
+                            {
+                                <input class="editCustomerChB" id="@custRow["Custno"]" type="checkbox" checked="checked" />
+                            }
+                            else
+                            {
+                                <input class="editCustomerChB" id="@custRow["Custno"]" type="checkbox" />
+                            }
+                            </td>
+                            <td style="width:100%">@custRow["Custname"].ToString()</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+        <div style="float:left; margin-left:20px">
+            <div style="margin-bottom:4px">
+                @Resources.Account.Register.filter
+                <select id="editSupplierDd" onchange="$global.filterSmallTable('editSupplierChB', 'editSupplierDd', 'editSuppRow.')">
+                    <option value="All">@Resources.Global.all</option>
+                    <option value="Assigned">@Resources.Global.assigned</option>
+                    <option value="Unassigned">@Resources.Global.unassigned</option>
+                </select>
+            </div>
+            <div class="smallTbl">
+                <table cellpadding="0" cellspacing="0" border="1" bordercolor="#cccccc" rules="rows">                    
+                    <thead>
+                        <tr>
+                            <th class="smallTbl_hdr" colspan="2">@Resources.Account.Register.availSuppliers</th>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                    @foreach (System.Data.DataRow suppRow in this.Model.EditUser.Suppliers.Rows)
+                    {
+                        <tr id="editSuppRow.@suppRow["UniqSupno"]" >
+                            <td>
+                            @if ((bool)suppRow["Assigned"])
+                            {
+                                <input class="editSupplierChB" id="@suppRow["UniqSupno"]"  type="checkbox" checked="checked" />
+                            }
+                            else
+                            {
+                                <input class="editSupplierChB" id="@suppRow["UniqSupno"]" type="checkbox" />
+                            }
+                            </td>
+                            <td style="width:100%">@suppRow["Supname"].ToString()</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both; height:20px; width:10px;">
+    
+    </div>
+    <input id="userIdTxt" type="hidden" value="@this.Model.EditUser.MbrUser.ProviderUserKey.ToString()" />
+    <input id="licenseTypeTxt" type="hidden" value="@this.Model.EditUser.LicenseType" />
+    </div>
+</div>
+

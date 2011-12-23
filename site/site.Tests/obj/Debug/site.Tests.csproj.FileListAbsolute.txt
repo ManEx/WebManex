@@ -1,0 +1,66 @@
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\site.Tests.dll.config
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\site.Tests.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\site.Tests.pdb
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\site.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\BLL.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\Resources.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\DAL.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\site.pdb
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\BLL.pdb
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\Resources.pdb
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\DAL.pdb
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Debug\es\Resources.resources.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\DansFolder\Projects\eManEx\site\site.Tests\obj\Debug\site.Tests.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\obj\Debug\site.Tests.pdb
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\site.Tests.dll.config
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\site.Tests.dll
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\site.Tests.pdb
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\BLL.dll
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\EntityFramework.dll
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\Resources.dll
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\site.dll
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\DAL.dll
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\BLL.pdb
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\Resources.pdb
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\site.pdb
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\EntityFramework.xml
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\DAL.pdb
+C:\work\Projects\eManEx\site\site.Tests\bin\Debug\es\Resources.resources.dll
+C:\work\Projects\eManEx\site\site.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\work\Projects\eManEx\site\site.Tests\obj\Debug\site.Tests.dll
+C:\work\Projects\eManEx\site\site.Tests\obj\Debug\site.Tests.pdb
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\site.Tests.dll.config
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\site.Tests.dll
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\site.Tests.pdb
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\BLL.dll
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\EntityFramework.dll
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\Resources.dll
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\site.dll
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\DAL.dll
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\BLL.pdb
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\Resources.pdb
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\site.pdb
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\EntityFramework.xml
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\DAL.pdb
+C:\Users\DanToshiba\WebManex\site\site.Tests\bin\Debug\es\Resources.resources.dll
+C:\Users\DanToshiba\WebManex\site\site.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\DanToshiba\WebManex\site\site.Tests\obj\Debug\site.Tests.dll
+C:\Users\DanToshiba\WebManex\site\site.Tests\obj\Debug\site.Tests.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\site.Tests.dll.config
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\site.Tests.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\site.Tests.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\BLL.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\EntityFramework.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\Resources.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\site.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\DAL.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\BLL.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\Resources.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\site.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\EntityFramework.xml
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\DAL.pdb
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\bin\Debug\es\Resources.resources.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\obj\Debug\site.Tests.dll
+C:\Users\David\Documents\Visual Studio 2010\Projects\WebManex\site\site.Tests\obj\Debug\site.Tests.pdb

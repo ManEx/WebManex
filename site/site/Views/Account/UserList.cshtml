@@ -1,0 +1,38 @@
+﻿@model List<site.Models.UserModel>
+
+<button class="blue" onclick="javascript:$account.getRegisterNewView()" style="margin:0 0 20px 10px">@Resources.Account.Register.addUser >></button>
+<table cellpadding="0" cellspacing="0" style="width:100%">
+    <tr class="userListHdr">
+        <td>INIT</td>
+        <td>User Name</td>
+        <td align="center">Admin</td>
+    </tr>
+@foreach (site.Models.UserModel u in this.Model)
+{    
+    if (u.MbrUser.UserName != "admin")
+    {    
+    <tr id="@u.MbrUser.ProviderUserKey" class="userListRow" onclick="javascript:$account.getEditUserView('@u.MbrUser.ProviderUserKey')">
+        <td>
+            @u.Initials
+        </td>
+        <td>@u.MbrUser.UserName</td>
+        <td align="center">
+        @if (Roles.IsUserInRole(u.MbrUser.UserName, "CompanyAdmin"))
+        {
+            <input type="checkbox" disabled="disabled" checked="checked" />
+        }
+        else
+        {
+            <input type="checkbox" disabled="disabled" />
+        }
+        </td>
+    </tr>
+    }
+    
+}
+</table>    
+      
+             
+
+
+

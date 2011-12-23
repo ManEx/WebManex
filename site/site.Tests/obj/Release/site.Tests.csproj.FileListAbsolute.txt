@@ -1,0 +1,13 @@
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Release\site.Tests.dll.config
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Release\site.Tests.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Release\site.Tests.pdb
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Release\site.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Release\site.pdb
+C:\DansFolder\Projects\eManEx\site\site.Tests\obj\Release\ResolveAssemblyReference.cache
+C:\DansFolder\Projects\eManEx\site\site.Tests\obj\Release\site.Tests.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\obj\Release\site.Tests.pdb
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Release\Resources.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Release\Resources.pdb
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Release\es\Resources.resources.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Release\BLL.dll
+C:\DansFolder\Projects\eManEx\site\site.Tests\bin\Release\BLL.pdb

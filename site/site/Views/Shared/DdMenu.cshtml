@@ -1,0 +1,8 @@
+﻿@model site.Models.MenuItemListModel
+
+@if (this.Model.ShowSelectFirstItem)
+{ <option value="">@Resources.Global.selectOption</option> }
+@foreach (site.Models.MenuItem mi in this.Model.MenuItems)
+{
+    <option value="@mi.Id">@mi.Text</option>
+}

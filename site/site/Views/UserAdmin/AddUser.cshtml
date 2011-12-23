@@ -1,0 +1,195 @@
+﻿@model site.Models.Admin.AddUserModel
+
+<h2 class="bodyShdwTxt">@Resources.Account.Register.createNew</h2>
+<div class="ui-widget" id="saveConfirm" style="display:none; margin-bottom:10px;">
+	<div style="padding: 4px .7em;" class="ui-state-highlight ui-corner-all"> 
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+            @Resources.Account.Register.saveConfirmation				
+	</div>
+</div>
+<div class="ui-widget" id="saveError" style="display:none; margin-bottom:10px;">
+    <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	        @Resources.Account.Register.saveUnsuccessful
+    </div>
+</div>
+<div class="ui-widget" id="missingFields" style="display:none; margin-bottom:10px;">
+    <div style="padding: 4px .7em;" class="ui-state-error ui-corner-all"> 
+	    <span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+	        @Resources.Global.requiredFieldMsg
+    </div>
+</div>
+<table>
+    <tr>
+        <td colspan="2"><span id="regUsernameLbl">@Resources.Account.Register.username</span></td>
+        <td><span id="licenseTypeLbl">@Resources.Account.Register.licenseType</span></td>
+        <td colspan="2" rowspan="2" valign="bottom">
+            <div style="margin-left:20px">
+            @Html.Partial("Button", new site.Models.ButtonModel(this.Model.Usr, "saveNewUserBtn", new string[] { "USERS_Add" },
+                Resources.Account.Register.addUser, "javascript:$admin.validateAdd()", Resources.Account.Register.addUserDesc, "blue", "save", false))
+            </div>
+        </td>
+    </tr>
+    <tr>        
+        <td colspan="2"><input id="regUsernameTxt" type="text" /></td>
+        <td>
+            <select id="licenseTypeDD">
+                <option value="">@Resources.Global.selectOption</option>
+                <option value="full">@Resources.Account.Register.licenseTypeFull</option>
+                <option value="prodcution">@Resources.Account.Register.licenseTypeProduction</option>
+                <option value="customer">@Resources.Account.Register.licenseTypeCust</option>
+                <option value="supplier">@Resources.Account.Register.licenstTypeSupplier</option>
+                <option value="view">@Resources.Account.Register.licenseTypeView</option>
+            </select>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td><span id="regInitialsLbl">@Resources.Account.Register.initials</span></td>
+        <td><span id="regFNameLbl">@Resources.Account.Register.firstName</span></td>
+        <td><span id="regLNameLbl">@Resources.Account.Register.lastName</span></td>
+        <td><span id="regEmailLbl">@Resources.Account.Register.email</span></td>
+    </tr>
+    <tr>
+        <td><input id="regInitialsTxt" style="width:50px" type="text" /></td>
+        <td><input id="regFNameTxt" type="text" /></td>
+        <td><input id="regLNameTxt" type="text" /></td>
+        <td><input id="regEmailTxt" style="width:250px" type="text" /></td>
+    </tr>
+</table>
+<table cellpadding="0" cellspacing="0" style="margin-top:10px">
+    <tr>
+        <td> 
+            <fieldset style="width:230px"> 
+                <legend>@Resources.Account.Register.superUsers</legend>
+                <input id="acctAdminChB" onchange="$admin.superUserToggle();" type="checkbox" />
+                <span>@Resources.Account.Register.acctSuperUser</span><br />
+                <input id="prodAdminChB" onchange="$admin.superUserToggle();" type="checkbox" />
+                <span>@Resources.Account.Register.prodSuperUser</span><br />
+                <input id="regCompanyAdminChB" onchange="$admin.superUserToggle();" type="checkbox" />
+                <span>@Resources.Account.Register.adminUser</span>
+            </fieldset>  
+        </td>
+        <td valign="top">
+            <fieldset  style="width:230px; margin-left: 15px;">
+                <legend>@Resources.Account.Register.passwordSettings</legend>
+                <input id="cantChangePwChB" type="checkbox" />            
+                <span>@Resources.Account.Register.cantChangePw</span><br />
+                <span style="margin-left:4px">@Resources.Account.Register.passwordExpireInterval</span><input style="width:30px" type="text" id="pwExpIntervalTxt" onkeypress="return $global.onlyNumbers(event);" value="@this.Model.AddUser.PwExpireInterval" /><br />
+                <span style="margin-left:4px">@Resources.Account.Register.timeoutLimit</span><input style="width:30px" type="text" id="timeoutTxt" onkeypress="return $global.onlyNumbers(event);" value="480" />
+            </fieldset>
+        </td>
+        <td valign="top">    
+            <fieldset style="width:230px; margin-left: 15px;">
+                <legend>@Resources.Account.Register.userType</legend>
+                <input id="exemptChB" type="checkbox" />            
+                <span>@Resources.Account.Register.exempt</span><br />
+                <input id="externalChB" type="checkbox" checked="checked" />
+                <span>@Resources.Account.Register.external</span>
+            </fieldset>
+        </td>
+    
+        
+    </tr>
+    
+</table>
+<div style="margin-top:20px">
+    <div style="float:left">
+        <div style="margin-bottom:4px">
+            @Resources.Account.Register.filter
+            <select id="groupsDd" onchange="$global.filterSmallTable('groupChB', 'groupsDd', 'groupRow.')">
+                <option value="All">@Resources.Global.all</option>
+                <option value="Assigned">@Resources.Global.assigned</option>
+                <option value="Unassigned">@Resources.Global.unassigned</option>
+            </select>
+        </div>
+        <div class="smallTbl" >
+            <table cellpadding="0" cellspacing="0" border="1" bordercolor="#cccccc" rules="rows">                    
+                <thead>
+                    <tr>
+                        <th class="smallTbl_hdr" colspan="2">@Resources.Account.Register.groups <span style="font-weight:normal">(<a  href="Groups">@Resources.Account.GroupManagement.manageGroups</a>)</span></th>
+                    </tr>                        
+                </thead>
+                <tbody>
+                @foreach (System.Data.DataRow groupRow in this.Model.AddUser.Groups.Rows)
+                {
+                    <tr id="groupRow.@groupRow["Groupid"]">
+                        <td>
+                            <input class="groupChB" id="@groupRow["Groupid"]" type="checkbox"  />
+                        </td>
+                        <td style="width:100%">@groupRow["groupName"].ToString()</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>            
+    </div>
+    <div style="float:left; margin-left:20px">
+        <div style="margin-bottom:4px">
+            @Resources.Account.Register.filter
+            <select id="customersDd" onchange="$global.filterSmallTable('customerChB', 'customersDd', 'custRow.')">
+                <option value="All">@Resources.Global.all</option>
+                <option value="Assigned">@Resources.Global.assigned</option>
+                <option value="Unassigned">@Resources.Global.unassigned</option>
+            </select>
+        </div>
+        <div class="smallTbl" >
+            <table cellpadding="0" cellspacing="0" border="1" bordercolor="#cccccc" rules="rows">                    
+                <thead>
+                    <tr>
+                        <th class="smallTbl_hdr" colspan="2">@Resources.Account.Register.availCustomers</th>
+                    </tr>                        
+                </thead>
+                <tbody>
+                @foreach (System.Data.DataRow custRow in this.Model.AddUser.Customers.Rows)
+                {
+                    <tr id="custRow.@custRow["Custno"]">
+                        <td>                        
+                            <input class="customerChB" id="@custRow["Custno"]" type="checkbox" />
+                        </td>
+                        <td style="width:100%">@custRow["Custname"].ToString()</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>            
+    </div>
+    <div style="float:left; margin-left:20px">
+        <div style="margin-bottom:4px">
+            @Resources.Account.Register.filter
+            <select id="supplierDd" onchange="$global.filterSmallTable('supplierChB', 'supplierDd', 'suppRow.')">
+                <option value="All">@Resources.Global.all</option>
+                <option value="Assigned">@Resources.Global.assigned</option>
+                <option value="Unassigned">@Resources.Global.unassigned</option>
+            </select>
+        </div>
+        <div class="smallTbl">
+            <table cellpadding="0" cellspacing="0" border="1" bordercolor="#cccccc" rules="rows">                    
+                <thead>
+                    <tr>
+                        <th class="smallTbl_hdr" colspan="2">@Resources.Account.Register.availSuppliers</th>
+                    </tr>                        
+                </thead>
+                <tbody>
+                @foreach (System.Data.DataRow suppRow in this.Model.AddUser.Suppliers.Rows)
+                {
+                    <tr id="suppRow.@suppRow["UniqSupno"]">
+                        <td>
+                            <input class="supplierChB" id="@suppRow["UniqSupno"]" type="checkbox" />
+                        </td>
+                        <td style="width:100%">@suppRow["Supname"].ToString()</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+ <br />
+<div class="ui-widget" style="margin:20px 0px; clear:both; position:relative; top:10px; ">
+	<div style="padding: 4px .7em; width:610px" class="ui-state-highlight ui-corner-all"> 
+		<span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span>
+            @Resources.Account.Register.defaultPwNotice				
+	</div>
+</div>
