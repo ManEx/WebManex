@@ -13,6 +13,8 @@ namespace BLL
             return DAL.Nav.GetSearchCategories();
         }
 
+        //comment
+
         public static DataTable GetSearchSubCategories(string categoryId)
         {
             return DAL.Nav.GetSearchSubCategories(categoryId);
