@@ -33,7 +33,7 @@ var $order = {
             rowNum: 10,
             rowList: [10, 20, 30],
             height: "100%",
-            width: $(window).width() - 1,
+            width: $(window).width() +30,
             pagination: true,
             pager: '#ordersPager',
             viewrecords: true,
