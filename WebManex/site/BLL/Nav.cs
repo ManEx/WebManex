@@ -17,6 +17,7 @@ namespace BLL
         {
             return DAL.Nav.GetSearchSubCategories(categoryId);
         }
+        //test comment
 
         public static DataSet GetSearchResults(string searchText, string searchType, string userId)
         {
